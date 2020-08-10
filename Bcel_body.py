@@ -126,9 +126,6 @@ def main_star(des, ns, size, planet):
         repo13 = "Equatorial coordinates observed from Terris: Rise Ascension {} hours, Declination {} degrees".format(
             eq_coord[0], eq_coord[1])
         placehold2 = "\r"
-        # choice = "Captain, where would you like to explore next? \nComment the star label (eg. A or B)"
-        # choice2 = "or the planet label (eg. a or b) or type NEXT to warp to the next system."
-        # print(repo1, repo2, repo3, repo4, repo5, repo6, repo7, repo8, repo9, repo10, repo11, repo12, repo13)
         save_name = "E:\Python projects\Python Resource\spacebot\save_states/states_star{}.txt".format(ns)
         save_star = open(save_name, "w")
         lineset = [reach, bot_work, placehold, heading, repo1, repo2, repo3, repo4, repo5, repo6, repo7, repo8, repo9, repo10, repo11, repo12,
@@ -186,9 +183,6 @@ def planet(des, np, size):
     else:
         repo15 = "Atmosphere composition: N/A"
     placehold2 = "\r"
-    # choice = "Captain, where would you like to explore next? \nComment the star label (eg. A or B)"
-    # choice2 = "or the planet label (eg. a or b) or type NEXT to warp to the next system."
-    # print( repo1, repo2, repo4, repo5, repo6, repo12, repo13, repo14, repo15, placehold2, choice, choice2)
     save_name = "E:\Python projects\Python Resource\spacebot\save_states/states_planet{}.txt".format(np)
     save_star = open(save_name, "w")
     lineset = [reach, bot_work, placehold, heading, repo1, repo2, repo4, repo5, repo6, repo12, repo13, repo14, repo15, placehold2]
@@ -196,9 +190,3 @@ def planet(des, np, size):
         save_star.writelines("{}\n".format(line))
     save_star.close()
     return color # For plotting the system
-
-# main_star()
-# ax.set_aspect("equal")
-# plt.axis(False)
-# plt.show()
-# fig.savefig('celestialbodies.png', bbox_inches="tight", facecolor="k")
