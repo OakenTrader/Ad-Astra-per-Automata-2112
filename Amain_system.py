@@ -144,13 +144,11 @@ def system_report(ang_size, ns, nump):
         pl_list += pl_name
     pla_list = "List of planets: {}".format(pl_list)
     text_holder2 = "\n"
-    choice = "Captain, where would you like to explore next? \nComment the star label (eg. A or B)"
-    choice2 = "or the planet label (eg. a or b) or type NEXT to warp to the next system."
     save_name = "E:\Python projects\Python Resource\spacebot\save_states/states_system.txt"
     save_star = open(save_name, "w")
     lineset = [heading, reach, angular_size, distance, bot_work, text_holder, sys_info, desig, comm, num_sta, star_list,
                num_pla,
-               pla_list, text_holder2, choice, choice2]
+               pla_list, text_holder2]
     for [i, line] in zip(range(0, len(lineset)), lineset):
         save_star.writelines("{}\n".format(line))
     save_star.close()
