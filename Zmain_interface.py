@@ -97,7 +97,7 @@ def change_body():
     file_s.close()
     file_p.close()
     if len(read_s) != 0:
-        star_name = dir_save_states + "/{}".format(read_s[0])
+        star_name = dir_save_states + "/{}".format(read_s[0][:16])
         for n in range(0, 100):
             if str(n) in star_name:
                 star_pic = "star{}.png".format(str(n))
@@ -105,7 +105,7 @@ def change_body():
         del read_s[0]
         file_s = open(unex_star, "w")
         for file in read_s:
-            file_s.writelines("{}\n".format(file))
+            file_s.writelines("{}".format(file))
         star_states = open(star_name, "r")
         read_star = star_states.readlines()
         message = {}
@@ -117,7 +117,7 @@ def change_body():
         img_star = dir_image + "/{}".format(star_pic)
         upload(message, access_token, img_star)
     elif len(read_s) == 0 and len(read_p) != 0:
-        planet_name = dir_save_states + "/{}".format(read_p[0])
+        planet_name = dir_save_states + "/{}".format(read_p[0][:18])
         for n in range(0, 100):
             if str(n) in planet_name:
                 planet_pic = "planet{}.png".format(str(n))
@@ -125,7 +125,7 @@ def change_body():
         del read_p[0]
         p = open(unex_planet, "w")
         for file in read_p:
-            file_p.writelines("{}\n".format(file))
+            p.writelines("{}".format(file))
         planet_states = open(planet_name, "r")
         read_star = planet_states.readlines()
         message = {}
@@ -162,7 +162,7 @@ def new_system():
         line5 = str(time)
         lineset = [line0, line1, line2, line3, line4, line5]
         for [i, line] in zip(range(0, len(lineset)), lineset):
-            c_state.writelines("{}\n".format(line))
+            c_state.writelines("{}\r".format(line))
         ms.generate_star_system(new_seed)
         body_list(dir_save_states)
 
